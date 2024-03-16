@@ -8,4 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Vertical.create!(name: "Test Vertical")
+3.times do |i|
+  vertical = Vertical.create!(name: "Test Vertical #{i}")
+  
+  2.times do |j|
+    vertical.categories.create!(name: "Test Category #{j}", state: "active")
+  end
+end
+
