@@ -12,8 +12,24 @@
   vertical = Vertical.create!(
     name: "Test Vertical #{i}",
     categories_attributes: [
-      {name: "Test Category #{i}-1", state: "active"},
-      {name: "Test Category #{i}-2", state: "active"},
+      {
+        name: "Test Category #{i}-1",
+        state: "active",
+        courses_attributes: [
+          {name: "Test Course - #{i}-1-1", author: "Test Author - #{i}-1-1", state: "active"},
+          {name: "Test Course - #{i}-1-2", author: "Test Author - #{i}-1-2", state: "active"},
+          {name: "Test Course - #{i}-1-3", author: "Test Author - #{i}-1-3", state: "active"},
+        ],
+      },
+      {
+        name: "Test Category #{i}-2",
+        state: "active",
+        courses_attributes: [
+          {name: "Test Course - #{i}-2-1", author: "Test Author - #{i}-2-1", state: "active"},
+          {name: "Test Course - #{i}-2-2", author: "Test Author - #{i}-2-2", state: "active"},
+          {name: "Test Course - #{i}-2-3", author: "Test Author - #{i}-2-3", state: "active"},
+        ],
+      },
     ],
   )
 end
