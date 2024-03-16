@@ -10,7 +10,11 @@ To get started, first install all dependencies:
 
     $ bundle install
 
-Then migrate the database:
+Then create the database:
+
+    $ rails db:create
+
+Finally, migrate the database:
 
     $ rails db:migrate
 
