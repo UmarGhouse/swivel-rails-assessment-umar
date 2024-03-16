@@ -46,6 +46,6 @@ class VerticalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vertical_params
-      params.require(:vertical).permit(:name)
+      params.require(:vertical).permit(:name, categories_attributes: [:id , :name, :state])
     end
 end

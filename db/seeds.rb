@@ -9,10 +9,12 @@
 #   end
 
 3.times do |i|
-  vertical = Vertical.create!(name: "Test Vertical #{i}")
-  
-  2.times do |j|
-    vertical.categories.create!(name: "Test Category #{j}", state: "active")
-  end
+  vertical = Vertical.create!(
+    name: "Test Vertical #{i}",
+    categories_attributes: [
+      {name: "Test Category #{i}-1", state: "active"},
+      {name: "Test Category #{i}-2", state: "active"},
+    ],
+  )
 end
 
