@@ -1,4 +1,7 @@
 class Category < ApplicationRecord
+  validates_uniqueness_of :name
+  validates_with CategoryValidator
+
   belongs_to :vertical
   has_many :courses, dependent: :destroy
 
