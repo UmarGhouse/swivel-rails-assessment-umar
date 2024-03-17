@@ -48,3 +48,7 @@ end
 gem "searchkick"
 
 gem  "elasticsearch", "< 7.14"
+
+gem "devise", "~> 4.9"
+
+gem "doorkeeper", "~> 5.6"

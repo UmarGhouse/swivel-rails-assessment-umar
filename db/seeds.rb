@@ -39,3 +39,12 @@ Vertical.reindex
 Category.reindex
 Course.reindex
 
+# if there is no OAuth application created, create them
+if Doorkeeper::Application.count.zero?
+  Doorkeeper::Application.create(name: "Test client", redirect_uri: "", scopes: "")
+  test_client = Doorkeeper::Application.find_by(name: "Test client")
+
+  puts "OAuth seed client_id: #{test_client.uid}"
+  puts "OAuth seed client_secret: #{test_client.secret}"
+end
+

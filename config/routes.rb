@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  use_doorkeeper do
+    skip_controllers :authorizations, :applications, :authorized_applications
+  end
+
+  # Setup devise user routes and override registrations controller
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+
   resources :courses
   resources :categories
   resources :verticals
