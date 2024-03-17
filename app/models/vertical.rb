@@ -1,4 +1,6 @@
 class Vertical < ApplicationRecord
+  searchkick
+  
   validates_uniqueness_of :name
   validates_with VerticalValidator
 

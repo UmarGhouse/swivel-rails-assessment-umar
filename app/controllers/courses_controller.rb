@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
 
   # GET /courses
   def index
-    @courses = Course.all
+    @courses = Course.search(params.fetch(:q, "*"))
 
     render json: @courses
   end

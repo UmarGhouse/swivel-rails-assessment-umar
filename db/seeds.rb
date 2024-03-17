@@ -34,3 +34,8 @@
   )
 end
 
+# Create SearchKick (Elastic Search) Indexes
+Vertical.reindex
+Category.reindex
+Course.reindex
+

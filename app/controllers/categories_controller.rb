@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   def index
-    @categories = Category.all
+    @categories = Category.search(params.fetch(:q, "*"))
 
     render json: @categories
   end

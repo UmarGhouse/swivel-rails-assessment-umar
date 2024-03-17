@@ -3,7 +3,7 @@ class VerticalsController < ApplicationController
 
   # GET /verticals
   def index
-    @verticals = Vertical.all
+    @verticals = Vertical.search(params.fetch(:q, "*"))
 
     render json: @verticals
   end
