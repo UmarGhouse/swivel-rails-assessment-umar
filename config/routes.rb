@@ -4,13 +4,18 @@ Rails.application.routes.draw do
   end
 
   # Setup devise user routes and override registrations controller
-  devise_for :users, controllers: {
+  devise_for :users, skip: ['sessions'], controllers: {
     registrations: 'users/registrations'
   }
 
-  resources :courses
-  resources :categories
-  resources :verticals
+  namespace :api do
+    namespace :v1 do    
+      resources :courses
+      resources :categories
+      resources :verticals
+    end
+  end
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

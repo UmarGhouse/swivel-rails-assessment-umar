@@ -1,4 +1,4 @@
-class VerticalsController < ApplicationController
+class Api::V1::VerticalsController < ApplicationController
   before_action :set_vertical, only: %i[ show update destroy ]
 
   # GET /verticals
