@@ -39,6 +39,10 @@ Vertical.reindex
 Category.reindex
 Course.reindex
 
+# Devise user
+u = User.new(:email => "test@test.com", :password => 'password', :password_confirmation => 'password')
+u.save
+
 # if there is no OAuth application created, create them
 if Doorkeeper::Application.count.zero?
   test_client = Doorkeeper::Application.create(name: "Test client", redirect_uri: "", scopes: "")
