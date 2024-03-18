@@ -16,15 +16,21 @@ Then create and migrate the database:
     $ rails db:create
     $ rails db:migrate
 
-Finally, seed the database:
+Next, seed the database:
 
     $ rails db:seed
+
+> ⚠️ You will likely need to have your ElasticSearch server setup and running for this to complete without errors. Follow the instructions in the [ElasticSearch setup](#elasticsearch-setup) section below.
 
 Seeding the database will create some dummy records for:
 - Verticals
 - Categories
 - Courses
 - A test application for OAuth access
+
+Finally, to start the server run:
+
+    $ rails s
 
 All data can be accessed via the appropriate API endpoint. You can run `rails routes` for an overview of the routes.
 
@@ -120,9 +126,9 @@ In order for this to work appropriately in your local environment, you will need
   - Instructions for how to start the ElasticSearch server can be found in the same docs above.
   - You can check that the server is running by following the nstructions found in the "Check that Elasticsearch is running" section of the ElasticSearch Docs. Example link for [MacOS / Linux](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html#_check_that_elasticsearch_is_running).
 - If not done already, save the password to your `elastic` superuser to your environment variables for your current shell session: `export ELASTIC_PASSWORD="your-password"`
-    - This password is required to make a secure connection to the ElasticSearch server - See `/config/initializers/elasticsearch.rb`
+    - This password is **required** to make a secure connection to the ElasticSearch server - See `/config/initializers/elasticsearch.rb`
 
-_Note: I have used the `ssl: {verify: false}` option in the initializer, as a [self-signed certificate](https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo) for local development caused errors on my development system (Windows 11 + WSL2)._
+> _Note: I have used the `ssl: {verify: false}` option in the initializer, as a [self-signed certificate](https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo) for local development caused errors on my development system (Windows 11 + WSL2)._
 
 With all the above setup, you can run search queries on each `#index` route using the `?q=` query string. e.g.: `localhost:3000/categories?q=test`
 
