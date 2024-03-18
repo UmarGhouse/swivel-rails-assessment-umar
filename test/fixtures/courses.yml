@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  author: MyString
-  state: MyString
+  name: MyString1
+  author: MyString1
+  state: active
   category: one
 
 two:
-  name: MyString
-  author: MyString
-  state: MyString
+  name: MyString2
+  author: MyString2
+  state: active
   category: two

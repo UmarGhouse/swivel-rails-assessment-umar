@@ -18,7 +18,7 @@ class Api::V1::VerticalsController < ApplicationController
     @vertical = Vertical.new(vertical_params)
 
     if @vertical.save
-      render json: @vertical, status: :created, location: @vertical
+      render json: @vertical, status: :created, location: api_v1_vertical_url(@vertical)
     else
       render json: @vertical.errors, status: :unprocessable_entity
     end

@@ -52,3 +52,5 @@ gem  "elasticsearch", "< 7.14"
 gem "devise", "~> 4.9"
 
 gem "doorkeeper", "~> 5.6"
+
+gem "mocha", "~> 2.1", require: false

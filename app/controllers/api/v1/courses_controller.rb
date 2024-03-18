@@ -18,7 +18,7 @@ class Api::V1::CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      render json: @course, status: :created, location: @course
+      render json: @course, status: :created, location: api_v1_course_url(@course)
     else
       render json: @course.errors, status: :unprocessable_entity
     end
